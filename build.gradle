@@ -31,6 +31,7 @@ tasks.named('test') {
 
 bootJar {
     enabled = false
+    archiveClassifier = ''
 }
 
 jar {
@@ -40,7 +41,7 @@ jar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar // 위에서 만든 순수 jar 파일을 배포 결과물로 지정!
+            artifact jar
         }
     }
 }
