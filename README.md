@@ -12,6 +12,6 @@ gradle
 ```
 ```
 dependencies {
-	        implementation 'com.github.L98293:phone:1.0.0'
+	        implementation 'com.github.L98293:phone:1.1.0'
 	}
 ```
