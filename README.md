@@ -1,6 +1,6 @@
 ## How to use
 
-gradle
+setting.gradle
 ```
 	dependencyResolutionManagement {
 		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -10,6 +10,8 @@ gradle
 		}
 	}
 ```
+
+build.gradle
 ```
 dependencies {
 	        implementation 'com.github.L98293:phone:1.1.0'
