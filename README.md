@@ -19,3 +19,11 @@ dependencies {
 A custom validation annotation for phone numbers based on ISO international standards.
 
 You can easily validate phone numbers by applying the @Phone annotation to your fields. Specify the ISO 3166-1 alpha-2 country code (e.g., "KR", "US") in the region attribute.
+
+```
+@Phone(region = "KR")
+    private String phoneNumber;
+
+@Phone(region = "US")
+    private String phoneNumber;
+```
