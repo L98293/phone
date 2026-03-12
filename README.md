@@ -22,8 +22,8 @@ You can easily validate phone numbers by applying the @Phone annotation to your 
 
 ```
 @Phone(region = "KR")
-    private String phoneNumber;
+    String phoneNumber;
 
 @Phone(region = "US")
-    private String phoneNumber;
+    String phoneNumber;
 ```
