@@ -31,11 +31,11 @@ tasks.named('test') {
 
 bootJar {
     enabled = false
-    archiveClassifier = ''
 }
 
 jar {
     enabled = true
+    archiveClassifier = ''
 }
 
 publishing {
