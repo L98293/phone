@@ -1,5 +1,6 @@
-## How to use
+# How to use
 
+### Gradle
 setting.gradle
 ```
 	dependencyResolutionManagement {
@@ -16,6 +17,27 @@ build.gradle
 dependencies {
 	        implementation 'com.github.L98293:phone:1.1.0'
 	}
+```
+
+
+### Maven
+pom.xml
+```
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+
+dependency
+```
+	<dependency>
+	    <groupId>com.github.L98293</groupId>
+	    <artifactId>phone</artifactId>
+	    <version>Tag</version>
+	</dependency>
 ```
 
 A custom validation annotation for phone numbers based on ISO international standards.
