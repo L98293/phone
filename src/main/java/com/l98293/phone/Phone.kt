@@ -22,6 +22,7 @@ import kotlin.reflect.KClass
 annotation class Phone(
     val message: String = "Invalid number format..",
     val region: Region,
+    val format: Format,
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 )

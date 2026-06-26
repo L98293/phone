@@ -7,30 +7,28 @@ import jakarta.validation.ConstraintValidatorContext
 class PhoneValidator: ConstraintValidator<Phone, String> {
 
     private lateinit var region: Region
+    private lateinit var format: Format
 
     override fun initialize(constraintAnnotation: Phone) {
 
         region = constraintAnnotation.region
+        format = constraintAnnotation.format
     }
 
     override fun isValid(
         value: String?,
         context: ConstraintValidatorContext?
-    ): Boolean {
-
-        if (value.isNullOrEmpty()) { return true }
+    ) = value.isNullOrEmpty() || runCatching {
 
         val phoneNumberUtil = PhoneNumberUtil.getInstance()
+        val phoneNumber = phoneNumberUtil.parseAndKeepRawInput(
+            value,
+            region.code
+        )
 
-        return runCatching {
-
-            phoneNumberUtil.isValidNumberForRegion(
-                phoneNumberUtil.parse(
-                    value,
-                    region.code
-                ),
-                region.code
-            )
-        }.getOrDefault(false)
-    }
+        phoneNumberUtil.isValidNumberForRegion(
+            phoneNumber,
+            region.code
+        ) && format.matches(phoneNumber.countryCodeSource)
+    }.getOrDefault(false)
 }
