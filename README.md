@@ -1,5 +1,7 @@
 # How to use
 
+[![](https://jitpack.io/v/L98293/phone.svg)](https://jitpack.io/#L98293/phone)
+
 ### Gradle
 setting.gradle
 ```
