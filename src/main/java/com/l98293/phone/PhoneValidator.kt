@@ -32,6 +32,4 @@ class PhoneValidator: ConstraintValidator<Phone, String> {
             )
         }.getOrDefault(false)
     }
-
-
 }
