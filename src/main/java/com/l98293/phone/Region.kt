@@ -1,6 +1,8 @@
-package com.l98293.phone;
+package com.l98293.phone
 
-public enum Region {
+enum class Region(
+	val code: String
+) {
 
 	AD("AD"),
 	AE("AE"),
@@ -251,16 +253,4 @@ public enum Region {
 	ZA("ZA"),
 	ZM("ZM"),
 	ZW("ZW");
-
-
-
-	private final String code;
-
-	Region(String code) {
-		this.code = code;
-	}
-
-	public String getCode() {
-		return code;
-	}
 }
