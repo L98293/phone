@@ -25,7 +25,10 @@ class PhoneValidator: ConstraintValidator<Phone, String> {
         return runCatching {
 
             phoneNumberUtil.isValidNumberForRegion(
-                phoneNumberUtil.parse(value, region.code),
+                phoneNumberUtil.parse(
+                    value,
+                    region.code
+                ),
                 region.code
             )
         }.getOrDefault(false)
