@@ -1,6 +1,10 @@
 # How to use
 [![](https://jitpack.io/v/L98293/phone.svg)](https://jitpack.io/#L98293/phone)
 
+Supports Spring Boot 3.x.x<br>
+If you want to use it on Spring Boot 4.x.x version, please click 
+<a href="https://github.com/L98293/phone/tree/spring-boot-4.x.x">here</a>.
+
 ### Verified Versions
 Spring Boot: 3.5.13<br>
 Java: 21<br>
