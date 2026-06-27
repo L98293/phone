@@ -69,7 +69,7 @@ Translate by Claude. If you find any issues with the translation, please let us 
 ### build.gradle.kts
 ```kotlin
 dependencies {
-    implementation("com.github.L98293:phone:2.1.1")
+    implementation("com.github.L98293:phone:2.1.1-4")
 }
 ```
 ---
@@ -88,7 +88,7 @@ dependencies {
 ### build.gradle
 ```java
 dependencies {
-	implementation 'com.github.L98293:phone:2.1.1'
+	implementation 'com.github.L98293:phone:2.1.1-4'
 }
 ```
 ---
