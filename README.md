@@ -61,17 +61,23 @@ Translate by Claude. If you find any issues with the translation, please let us 
 ## Gradle
 ### setting.gradle.kts
 ```kotlin
-	dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			mavenCentral()
-			maven { url = uri("https://jitpack.io") }
-		}
+// please Add this at the top
+dependencyResolutionManagement {
+	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+	repositories {
+		mavenCentral()
+		maven { url = uri("https://jitpack.io") }
 	}
+}
 ```
 
 ### build.gradle.kts
 ```kotlin
+// Remove this block
+// repositories {
+//     mavenCentral()
+// }
+
 dependencies {
     implementation("com.github.L98293:phone:2.1.1")
 }
@@ -80,17 +86,23 @@ dependencies {
 
 ### setting.gradle
 ```java
-	dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS);
-		repositories {
-			mavenCentral();
-			maven { url 'https://jitpack.io' }
-		}
+// please Add this at the top
+dependencyResolutionManagement {
+	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS);
+	repositories {
+		mavenCentral();
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 
 ### build.gradle
 ```java
+// Remove this block
+// repositories {
+//     mavenCentral()
+// }
+
 dependencies {
 	implementation 'com.github.L98293:phone:2.1.1'
 }
