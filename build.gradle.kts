@@ -1,15 +1,9 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+
 plugins {
     kotlin("jvm") version "2.3.21"
-    id("io.spring.dependency-management") version "1.1.7"
     `maven-publish`
-}
-
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.13") {
-            bomProperty("kotlin.version", "2.3.21")
-        }
-    }
 }
 
 java {
@@ -18,21 +12,22 @@ java {
     }
 }
 
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_17)
+        apiVersion.set(KotlinVersion.KOTLIN_1_9)
+        languageVersion.set(KotlinVersion.KOTLIN_1_9)
+    }
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compileOnly("jakarta.validation:jakarta.validation-api")
+    compileOnly("jakarta.validation:jakarta.validation-api:3.0.2")
 
     implementation("com.googlecode.libphonenumber:libphonenumber:9.0.41")
-
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
-
-tasks.named<Test>("test") {
-    useJUnitPlatform()
 }
 
 publishing {

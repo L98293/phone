@@ -1,14 +1,12 @@
 # How to use
 [![](https://jitpack.io/v/L98293/phone.svg)](https://jitpack.io/#L98293/phone)
 
-Supports Spring Boot 3.x.x<br>
-If you want to use it on Spring Boot 4.x.x version, please click 
-<a href="https://github.com/L98293/phone/tree/spring-boot-4.x.x">here</a>.
+Supports Spring Boot 3.x.x and 4.x.x<br>
 
 ### Verified Versions
-Spring Boot: 3.5.13<br>
-Java: 21<br>
-Kotlin: 2.3.21
+Spring Boot: 3.5.16, 4.1.2<br>
+Java: 17, 21<br>
+Kotlin: 1.9.25, 2.3.21
 ---
 ## explain
 <details>
@@ -20,7 +18,7 @@ ISO 3166-1를 이용해서 해당 국가의 전화번호 형식의 유효성을 
 @Phone을 선언 후 지역과 번호 형식을 지정하시면 됩니다. 한국을 예시로 들었을 때
 
 @Phone(region = Region.KR, format = Format.LOCAL)형태로 사용할 수 있습니다.
-
+ㅓㅑㅅ아ㅣ러니아ㅓ래ㅣㅏㄴ어라ㅣ;ㄴ어ㅣ;ㅏ렁ㄴ;
 
 
 번호 형식은 아래와 같습니다.
@@ -31,7 +29,6 @@ format = Format.IDD // IDD 포함 (0082 10-1234-5678)
 format = Format.WITHOUT_PLUS // 국가코드 제외 (10-1234-5678)
 format = Format.LOCAL // 현지 번호 형식 (010-1234-5678)
 format = Format.ANY // 위 모든 경우 포함
-
 ```
 
 하이픈(-)을 포함하거나, 포함하지 않는 경우에도 사용 가능합니다.
@@ -104,7 +101,7 @@ dependencyResolutionManagement {
 // }
 
 dependencies {
-	implementation 'com.github.L98293:phone:2.1.1'
+	implementation 'com.github.L98293:phone:2.2.0'
 }
 ```
 ---
