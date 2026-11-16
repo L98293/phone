@@ -1,14 +1,12 @@
 # How to use
 [![](https://jitpack.io/v/L98293/phone.svg)](https://jitpack.io/#L98293/phone)
 
-Supports Spring Boot 3.x.x<br>
-If you want to use it on Spring Boot 4.x.x version, please click 
-<a href="https://github.com/L98293/phone/tree/spring-boot-4.x.x">here</a>.
+Supports Spring Boot 3.x.x and 4.x.x<br>
 
 ### Verified Versions
-Spring Boot: 3.5.13<br>
-Java: 21<br>
-Kotlin: 2.3.21
+Spring Boot: 3.5.16, 4.1.2<br>
+Java: 17, 21<br>
+Kotlin: 1.9.25, 2.3.21
 ---
 ## explain
 <details>
@@ -31,7 +29,6 @@ format = Format.IDD // IDD 포함 (0082 10-1234-5678)
 format = Format.WITHOUT_PLUS // 국가코드 제외 (10-1234-5678)
 format = Format.LOCAL // 현지 번호 형식 (010-1234-5678)
 format = Format.ANY // 위 모든 경우 포함
-
 ```
 
 하이픈(-)을 포함하거나, 포함하지 않는 경우에도 사용 가능합니다.
