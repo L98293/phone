@@ -18,7 +18,7 @@ ISO 3166-1를 이용해서 해당 국가의 전화번호 형식의 유효성을 
 @Phone을 선언 후 지역과 번호 형식을 지정하시면 됩니다. 한국을 예시로 들었을 때
 
 @Phone(region = Region.KR, format = Format.LOCAL)형태로 사용할 수 있습니다.
-
+ㅓㅑㅅ아ㅣ러니아ㅓ래ㅣㅏㄴ어라ㅣ;ㄴ어ㅣ;ㅏ렁ㄴ;
 
 
 번호 형식은 아래와 같습니다.
@@ -101,7 +101,7 @@ dependencyResolutionManagement {
 // }
 
 dependencies {
-	implementation 'com.github.L98293:phone:2.1.1'
+	implementation 'com.github.L98293:phone:2.2.0'
 }
 ```
 ---
