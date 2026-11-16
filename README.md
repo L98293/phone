@@ -1,5 +1,5 @@
 # How to use
-[![](https://jitpack.io/v/L98293/phone.svg)](https://jitpack.io/#L98293/phone)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.l98293/phone)](https://central.sonatype.com/artifact/io.github.l98293/phone)
 
 Supports Spring Boot 3.x.x and 4.x.x<br>
 
@@ -18,15 +18,14 @@ ISO 3166-1를 이용해서 해당 국가의 전화번호 형식의 유효성을 
 @Phone을 선언 후 지역과 번호 형식을 지정하시면 됩니다. 한국을 예시로 들었을 때
 
 @Phone(region = Region.KR, format = Format.LOCAL)형태로 사용할 수 있습니다.
-ㅓㅑㅅ아ㅣ러니아ㅓ래ㅣㅏㄴ어라ㅣ;ㄴ어ㅣ;ㅏ렁ㄴ;
 
 
 번호 형식은 아래와 같습니다.
 
 ```kotlin
-format = Format.PLUS // 국가코드 포함(+82 10-1234-5678)
-format = Format.IDD // IDD 포함 (0082 10-1234-5678)
-format = Format.WITHOUT_PLUS // 국가코드 제외 (10-1234-5678)
+format = Format.PLUS // 국가코드 포함 (+82 10-1234-5678)
+format = Format.IDD // 국제전화 식별번호 포함 (001 82 10-1234-5678, 00700 82 10-1234-5678)
+format = Format.WITHOUT_PLUS // + 없이 국가코드 포함 (82 10-1234-5678)
 format = Format.LOCAL // 현지 번호 형식 (010-1234-5678)
 format = Format.ANY // 위 모든 경우 포함
 ```
@@ -40,13 +39,13 @@ This is an annotation that validates phone number formats for the corresponding 
 Usage is as follows:
 
 Declare @Phone and specify the region and number format. Using South Korea as an example, it can be used in the form of @Phone(region = Region.KR, format = Format.LOCAL).
-The number formats are as follows:
+The number formats are as follows (US examples):
 ```kotlin
-format = Format.PLUS        // Includes country code (+1 123-456-7890)
-format = Format.IDD         // Includes IDD (001 123-456-7890)
-format = Format.WITHOUT_PLUS // Excludes country code (123-456-7890)
-format = Format.LOCAL       // Local number format (123-456-7890)
-format = Format.ANY         // Covers all of the above cases
+format = Format.PLUS         // Includes country code with + (+1 650-253-0000)
+format = Format.IDD          // Includes the international dialing prefix (011 1 650-253-0000)
+format = Format.WITHOUT_PLUS // Includes country code without + (1 650-253-0000)
+format = Format.LOCAL        // Local number format (650-253-0000)
+format = Format.ANY          // Covers all of the above cases
 ```
 It also supports numbers with or without hyphens (-).
 
@@ -56,53 +55,36 @@ Translate by Claude. If you find any issues with the translation, please let us 
 ---
 
 ## Gradle
-### setting.gradle.kts
-```kotlin
-// please Add this at the top
-dependencyResolutionManagement {
-	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-	repositories {
-		mavenCentral()
-		maven { url = uri("https://jitpack.io") }
-	}
-}
-```
-
 ### build.gradle.kts
 ```kotlin
-// Remove this block
-// repositories {
-//     mavenCentral()
-// }
+repositories {
+    mavenCentral()
+}
 
 dependencies {
-    implementation("com.github.L98293:phone:2.1.1")
-}
-```
----
-
-### setting.gradle
-```java
-// please Add this at the top
-dependencyResolutionManagement {
-	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS);
-	repositories {
-		mavenCentral();
-		maven { url 'https://jitpack.io' }
-	}
+    implementation("io.github.l98293:phone:2.2.0")
 }
 ```
 
 ### build.gradle
-```java
-// Remove this block
-// repositories {
-//     mavenCentral()
-// }
+```groovy
+repositories {
+    mavenCentral()
+}
 
 dependencies {
-	implementation 'com.github.L98293:phone:2.2.0'
+    implementation 'io.github.l98293:phone:2.2.0'
 }
+```
+
+## Maven
+### pom.xml
+```xml
+<dependency>
+    <groupId>io.github.l98293</groupId>
+    <artifactId>phone</artifactId>
+    <version>2.2.0</version>
+</dependency>
 ```
 ---
 
